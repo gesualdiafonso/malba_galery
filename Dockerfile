@@ -1,4 +1,4 @@
-FROM php:8.2-cli-alpine
+FROM php:8.2-cli-apache
 
 # Instala driver do PostgreSQL
 RUN apt-get update \
