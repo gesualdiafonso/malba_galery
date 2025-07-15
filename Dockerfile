@@ -1,16 +1,16 @@
-FROM php:8.2-cli-apache
+FROM php:8.2-cli-bullseye
 
 # Instala driver do PostgreSQL
 RUN apt-get update \
- && apt-get install -y libpq-dev \
- && docker-php-ext-install pdo_pgsql
+  && apt-get install -y libpq-dev \
+  && docker-php-ext-install pdo_pgsql
 
 # Define o diretório de trabalho
 WORKDIR /app
 COPY . .
 
-# Expor a porta 8080 — padrão da Render
+# Expor porta usada pelo servidor PHP
 EXPOSE 8080
 
-# Força o uso da porta padrão da Render
+# Start no modo servidor embutido
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "/app"]
