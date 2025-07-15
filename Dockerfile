@@ -10,7 +10,7 @@ WORKDIR /app
 COPY . .
 
 # Expor a porta 8080 — padrão da Render
-EXPOSE 8080
+EXPOSE 10000
 
 # Força o uso da porta padrão da Render
 CMD ["php", "-S", "0.0.0.0:8080", "-t", "/app", "index.php"]
