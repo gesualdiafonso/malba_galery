@@ -1,0 +1,542 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: auto;
+}
+
+:root{
+    --font-headers: "Playfair Display", serif;
+    --font-body: "Poppins", sans-serif;
+
+    /* Colors */
+    --color-background: #FCFFFF;
+    --color-primary: #F5F1E3;
+    --color-secundary: #A67B5B;
+    --color-accent: #C04826;
+    --color-text: #2E2D2C;
+    --color-text-light: #FCFFFF;
+
+    /* colors variant */
+
+    --color-variant-1: #7D5033;
+    --color-variant-2: #D6C4A0;
+    --color-variant-3: #4B4B4B;
+
+}
+
+/* PRE TAG STYLE */
+pre{
+    border:thin solid gainsboro;
+    border-radius: 1em;
+    background-color: ghostwhite;
+    margin: 1em;
+    padding: 1em;
+    color: rgb(44, 44, 44);
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* Estilos Globales */
+.logo{
+    display: none;
+}
+p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-family: var(--font-headers);
+    font-weight: 700;
+
+}
+h2{
+    font-family: var(--font-headers);
+    font-size: 3rem;
+    font-weight: 600;
+}
+.title{
+    color: var(--color-variant-2);
+}
+h3{
+    font-size: 2.5rem;
+    font-family: var(--font-headers);
+    color: var(--color-secundary);
+}
+h4{
+    font-family: var(--font-headers);
+}
+
+body{
+    background-color: var(--color-background);
+    color: var(--color-text)
+}
+.header{
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+}
+
+.border{
+    border-bottom: 2px solid var(--color-variant-3);
+}
+
+.carousel{
+    background-color: var(--color-variant-1)!important;
+}
+
+.footer{
+    background-color: var(--color-background);
+    border-top: 2px solid #2E2D2C;
+}
+
+ul, li, a {
+    list-style: none;
+    text-decoration: none;
+    font-family: var(--font-headers);
+}
+
+nav li a{
+    color: var(--color-text) !important;
+    font-family: var(--font-headers);
+    &:hover{
+        color: var(--color-accent) !important;
+    }
+}
+.uk-offcanvas-bar{
+    background-color: var(--color-background) !important;
+}
+.uk-offcanvas-close{
+    color: var(--color-text) !important;
+    margin: 0.5rem 1rem;
+}
+.uk-offcanvas-bar h3{
+    font-family: var(--font-headers);
+    color: var(--color-text) !important;
+    font-size: 2rem;
+}
+.uk-offcanvas-bar a{
+    color: var(--color-text) !important;
+    font-family: var(--font-headers);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+.uk-offcanvas-bar a:hover{
+    color: var(--color-accent) !important;
+}
+.uk-offcanvas-bar small, .uk-offcanvas-bar p {
+    color: var(--color-variant-3) !important;
+    font-family: var(--font-headers);
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+.uk-offcanvas-close:hover{
+    color: var(--color-accent) !important;
+}
+strong{
+    color: var(--color-accent);
+    font-family: var(--font-headers);
+    
+}
+.uk-card-body{
+    padding: 2rem 1.2rem;
+}
+
+
+
+/* Home Styles */
+
+.img-home{
+    width: 100%;
+    margin: 0 auto;
+}
+.img-card-artist {
+    width: 100%;
+    height: 100%;
+    max-width: 350px;
+    max-height: 250px;
+    object-fit: cover;
+}
+.control{
+    color: var(--color-text) !important;
+}
+.card-body{
+    height: 750px;
+    max-height: 750px;
+}
+.link-color{
+    color: var(--color-text) !important;
+}
+.artist-title{
+    color: var(--color-text-light) !important;
+}
+
+/* galery Styles */
+
+.title-galery{
+    font-size: 4.5rem;
+    font-weight: bold;
+    line-height: 0.9;
+    margin: 2rem 0;
+}
+.line-decor{
+    border-bottom: 4px solid var(--color-text);
+    margin: 2rem 0;
+}
+.uk-text-warning{
+    color: var(--color-accent) !important;
+}
+.uk-button-text:hover{
+    color: var(--color-accent) !important;
+    font-size: 2rem !important;
+}
+.img-card{
+    width: 100%;
+    max-width: 350px;
+    height: 350px;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* Artista Styles */
+.artista-section {
+    background-color: var(--color-background);
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.artista-img img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 500px;
+    filter: grayscale(10%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.artista-img img:hover {
+    filter: grayscale(0%);
+}
+
+.custom-card {
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+.obra-meta span {
+    font-size: 0.85rem;
+    color: #666;
+}
+.uk-text-muted, .uk-text-meta{
+    color: var(--color-variant-3) !important;
+    margin: 0.8rem 0;
+}
+.uk-heading-bullet{
+    color: var(--color-accent) !important;
+}
+
+/* Formulario Styles */
+
+h2.form-title {
+    font-family: var(--font-headers);
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: var(--color-variant-1);
+    text-align: center;
+}
+
+h3.form-subtitle {
+    font-family: var(--font-body);
+    color: var(--color-accent);
+    margin-top: 3rem;
+}
+
+form.uk-form-stacked {
+    background: var(--color-background);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+
+form.uk-form-stacked h3,
+form.uk-form-stacked label {
+    font-family: var(--font-headers);
+    color: var(--color-variant-1);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.uk-form-controls input,
+.uk-select,
+.uk-textarea {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-variant-2);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--color-text);
+    transition: border 0.3s ease;
+}
+
+.uk-form-controls input:focus,
+.uk-select:focus,
+.uk-textarea:focus {
+    border-color: var(--color-accent);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(192, 72, 38, 0.2);
+}
+
+.uk-button-primary {
+    background: var(--color-accent);
+    color: var(--color-text-light);
+    border-radius: 10px;
+    padding: 0.85rem 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+.uk-button-primary:hover {
+    background: #9e391d;
+    color: var(--color-text-light);
+}
+
+.required {
+    color: var(--color-accent);
+}
+
+.uk-checkbox {
+    accent-color: var(--color-accent);
+}
+
+.uk-margin-large-top {
+    margin-top: 5rem;
+}
+
+.uk-textarea {
+    resize: none;
+    height: 90px;
+    border-radius: 0;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-variant-2);
+    font-family: var(--font-body);
+    color: var(--color-text);
+    padding: 1rem;
+}
+
+/* Developer Styles */
+
+.developer-section {
+    color: var(--color-text);
+    padding: 3rem 1rem;
+    font-family: var(--font-body);
+}
+
+.developer-info h2 {
+    font-family: var(--font-headers);
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    color: var(--color-variant-1);
+}
+
+.developer-info p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.developer-info a {
+    color: var(--color-accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.developer-photo img {
+    border-radius: 10px;
+    border: 2px solid var(--color-secundary);
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+/* Error Style */
+
+.container-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-primary);
+    width: 100%;
+}
+
+.title-error {
+    text-align: center;
+    font-family: var(--font-headers);
+    font-size: 4rem;
+    color: white;
+}
+
+.title-error span:first-child {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--color-text); /* Contorno branco */
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.title-error span:last-child {
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+.content-error{
+    background-image: 
+        linear-gradient(to bottom, rgb(245, 241, 227) 15%,  rgba(0, 0, 0, 0) 100%),
+        url("/public/images/error_museo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    max-width: 300px;
+    max-height: 400px;
+    position: relative;
+}
+.error-img{
+    margin: 0 auto;
+    width: 100%;
+    height: 400px;
+    max-width: 300px;
+    max-height: 400px;
+}
+.content-error .button-error{
+    position: absolute;
+    bottom: 5%;
+    left: 30%;
+    background-color: var(--color-accent);
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    color: var(--color-primary);
+    padding: 0.5rem;
+    transition: all 0.4s;
+    &:hover{
+        border-radius: 15px;
+        color: var(--color-accent);
+        background-color: var(--color-background);
+        border: var(--color-accent) 1px solid;
+        padding: 0.3rem;
+    }
+}
+
+.content-copy{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Product section */
+.card{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1rem 0.8rem;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+.card-image img{
+    width: 100%;
+    height: auto;
+}
+.body-card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-title{
+    text-align: center;
+    color: var(--color-accent);
+}
+.card-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    gap: 5rem;
+}
+
+
+/* Estética responsiva */
+@media (max-width: 640px) {
+    form.uk-form-stacked {
+        padding: 2rem;
+    }
+
+    .uk-button-primary {
+        font-size: 1rem;
+    }
+
+    .developer-grid {
+        align-items: center;
+    }
+
+    .developer-photo {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .developer-info {
+        text-align: center;
+    }
+}
+@media (min-width: 641px){
+    .card{
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .card-img{
+        width: 100%;
+    }
+    .card-body{
+        width: 100%;
+    }
+}
+@media (min-width: 760px){
+    .container-error{
+        flex-direction: row;
+    }
+    .title-container{
+        padding: 0 2rem;
+    }
+    .content-error{
+        background-image: 
+            linear-gradient(to right, rgb(245, 241, 227) 15%,  rgba(0, 0, 0, 0) 100%),
+            url("/public/images/error_museo.jpg");
+    }
+}

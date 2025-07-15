@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: initial;
+}
+:root{
+    --font-headers: "Playfair Display", serif;
+    --font-body: "Poppins", sans-serif;
+
+    /* Colors */
+    --color-background: #FCFFFF;
+    --color-primary: #F5F1E3;
+    --color-secundary: #A67B5B;
+    --color-accent: #C04826;
+    --color-text: #2E2D2C;
+    --color-text-light: #FCFFFF;
+
+    /* colors variant */
+
+    --color-variant-1: #7D5033;
+    --color-variant-2: #D6C4A0;
+    --color-variant-3: #4B4B4B;
+
+}
+.team{
+    font-family: var(--font-body);
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: -3px;
+}
+.uk-nav{
+    color: var(--color-text) !important;
+    font-family: var(--font-headers);
+}
+.uk-nav li a{
+    &:hover{
+        color: var(--color-accent) !important;
+    }
+}
+
+.uk-offcanvas-bar{
+    background-color: var(--color-background);
+    color: var(--color-text) !important;
+    font-family: var(--font-headers);
+    font-weight: 600;
+}
+.uk-offcanvas-bar .team, .uk-offcanvas-bar h2{
+    color: var(--color-text) !important;
+    font-family: var(--font-headers);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.uk-offcanvas-bar a{
+    color: var(--color-text) !important;
+    font-family: var(--font-headers);
+    font-weight: 600;
+}
+.uk-offcanvas-bar a:hover{
+    color: var(--color-accent) !important;
+}
+.uk-offcanvas-bar .uk-button{
+    background-color: var(--color-primary) !important;
+    text-align: center;
+    color: var(--color-text) !important;
+    font-family: var(--font-headers);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+}
+.uk-text-warning{
+    color: var(--color-accent) !important;
+}
+
+
+.uk-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+
+.uk-background-muted{
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    border-right: 2px solid #2E2D2C;
+}
+
+.uk-button-default{
+    width: 100%;
+    padding: 0.85rem 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    margin: 0.5rem 0;
+}
+.uk-button-primary{
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    margin: 0.5rem 0;
+}
+
+.image{
+    width: 100%;
+    max-width: 300px !important;
+    height: 350px !important;
+    object-fit: cover;
+    margin: 0 auto !important;
+}
+.uk-button-danger{
+    background-color: var(--color-accent) !important;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    margin: 0.5rem 0;
+}
+.uk-button-secondary{
+    background-color: var(--color-secundary) !important;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    letter-spacing: 0.5px;
+    transition: background 0.3s ease;
+    margin: 0.5rem 0;
+}
+.accordion{
+    border-bottom: 1px solid var(--color-text);
+}
+.uk-form-label{
+    font-size: 0.90rem !important;
+    font-family: var(--font-body);
+    color: var(--color-text);
+}
+@media (max-width: 780px) {
+    table.uk-table tr td {
+      display: block;
+      width: 100%;
+    }
+  
+    table.uk-table tr td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 4px;
+    }
+  
+    table.uk-table thead {
+      display: none;
+    }
+    .uk-card-body {
+        max-height: none !important;
+        overflow-y: visible !important;
+      }
+    .uk-card-media-top img {
+        height: auto !important;
+      }
+  }
+
+
+/* Garante que o conteúdo principal deslize com o offcanvas no desktop */
+@media (min-width: 1024px) {
+    .uk-container{
+    width: 100%;
+    padding: 0 1rem;
+    }
+    body.uk-offcanvas-page {
+        overflow: auto !important;
+    }
+
+    #desktop-menu.uk-offcanvas {
+        position: fixed;
+        width: 250px;
+        z-index: 1000;
+    }
+
+    main {
+        margin-left: 250px;
+        transition: margin-left 0.3s ease;
+    }
+
+    body.uk-offcanvas-flip main {
+        margin-left: 0;
+    }
+}
