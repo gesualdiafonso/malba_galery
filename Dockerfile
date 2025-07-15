@@ -1,18 +1,18 @@
-# Usa imagem oficial do PHP
+# Usa imagem base do PHP com CLI
 FROM php:8.2-cli
 
-# Instala dependências para PostgreSQL
+# Instala dependências do PostgreSQL + extensões PDO
 RUN apt-get update && apt-get install -y libpq-dev \
     && docker-php-ext-install pdo_pgsql
 
-# Define a pasta onde seu app vai rodar
+# Define diretório de trabalho no container
 WORKDIR /app
 
-# Copia tudo da pasta atual pro container
+# Copia todos os arquivos do projeto para o container
 COPY . .
 
-# Expõe a porta 10000
+# Exponha a porta (Render escuta por padrão na 10000)
 EXPOSE 10000
 
-# Comando para iniciar o servidor embutido do PHP
+# Comando para rodar o PHP embutido
 CMD ["php", "-S", "0.0.0.0:10000"]
