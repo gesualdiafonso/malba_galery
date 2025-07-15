@@ -1,16 +1,16 @@
 FROM php:8.2-cli
 
-# --- Instala driver PDO + headers do Postgres ---
+# Instala driver do PostgreSQL
 RUN apt-get update \
  && apt-get install -y libpq-dev \
  && docker-php-ext-install pdo_pgsql
 
-# --- Copia a aplicação ---
+# Define o diretório de trabalho
 WORKDIR /app
 COPY . .
 
-# --- Porta dinâmica exigida pelo Render ---
-EXPOSE 0
+# Expor a porta 8080 — padrão da Render
+EXPOSE 8080
 
-# Render injeta $PORT; localmente continua na 10000
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-10000} -t /app"]
+# Força o uso da porta padrão da Render
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "/app"]
