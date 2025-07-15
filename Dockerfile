@@ -1,6 +1,10 @@
 # Usa imagem oficial do PHP
 FROM php:8.2-cli
 
+# Instala dependências para PostgreSQL
+RUN apt-get update && apt-get install -y libpq-dev \
+    && docker-php-ext-install pdo_pgsql
+
 # Define a pasta onde seu app vai rodar
 WORKDIR /app
 
